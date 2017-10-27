@@ -1,0 +1,19 @@
+{
+  "name": "wp-mu-login",
+  "version": "1.0.0",
+  "description": "A custom WordPress login for Mercer University",
+  "main": "index.js",
+  "repository": "https://github.com/InteractiveDesignAndDevelopment/wp-mu-login.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "",
+    "build:css:postcss": "",
+    "watch:css": "nodemon -e scss -x \"npm run build\""
+  },
+  "author": "Todd Sayre",
+  "license": "MIT",
+  "dependencies": {
+    "browserify-postcss": "^0.3.3",
+    "node-sass": "^4.5.3"
+  }
+}
