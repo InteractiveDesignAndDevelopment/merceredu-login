@@ -13,7 +13,7 @@
   "author": "Todd Sayre",
   "license": "MIT",
   "dependencies": {
-    "browserify-postcss": "^0.3.3",
+    "node-gyp": "^3.6.2",
     "node-sass": "^4.5.3"
   }
 }
