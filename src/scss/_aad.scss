@@ -1,0 +1,36 @@
+/**
+ * @author Todd Sayre
+ */
+
+@import 'colors';
+
+@include b('aad') {
+  color: #fff;
+  height: 100vh;
+  background-color: $warm-black;
+  max-width: 100%;
+  width: 100vw;
+
+  @include e('mercer') {
+    color: $lightest-orange;
+  }
+
+  @include e('cta') {
+
+    border-radius: 100%;
+    display: block;
+    font-size: 10vmin;
+    line-height: 30vmin;
+    height: 30vmin;
+    text-align: center;
+    width: 30vmin;
+
+    @include m('login') {
+      background-color: $light-green;
+    }
+
+    @include m('logout') {
+      background-color: $light-red;
+    }
+  }
+}

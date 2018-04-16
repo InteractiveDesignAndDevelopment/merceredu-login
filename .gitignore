@@ -58,4 +58,8 @@ typings/
 .env
 
 # IntelliJ
-.idea
+.idea/
+
+# Project-specific
+dist/
+build/

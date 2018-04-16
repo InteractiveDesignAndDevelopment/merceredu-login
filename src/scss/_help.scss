@@ -1,0 +1,11 @@
+/**
+ * @author Todd Sayre
+ */
+
+@import 'colors';
+
+@include b('help') {
+  background-color: $grey;
+  max-width: 100%;
+  width: 100vw;
+}
