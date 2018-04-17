@@ -1,36 +1,148 @@
 /**
  * @author Todd Sayre
  */
-
 @import 'colors';
 
 @include b('aad') {
+  background-color: $warm-black;
   color: #fff;
   height: 100vh;
-  background-color: $warm-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 100%;
   width: 100vw;
+
+  @include e('content') {
+    padding: 1rem;
+  }
+
+  @include e('heading') {
+    margin-bottom: 2rem;
+  }
 
   @include e('mercer') {
     color: $lightest-orange;
   }
 
+  @include e('actions') {
+
+    display: block;
+
+    @media (orientation: landscape) {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    > * {
+      margin-bottom: 1rem;
+    }
+
+    > * + * {
+      margin-bottom: 0rem;
+    }
+
+    @media (orientation: landscape) {
+      > *,
+      > * * {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   @include e('cta') {
 
-    border-radius: 100%;
-    display: block;
-    font-size: 10vmin;
-    line-height: 30vmin;
-    height: 30vmin;
+    align-items: center;
+    //border-width: 0.5rem;
+    //border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    position: relative;
     text-align: center;
-    width: 30vmin;
+    text-decoration: none;
+    width: 100%;
+
+    @media (orientation: landscape) {
+      width: 30vw;
+    }
+
+    &::after {
+      content: ' ';
+      border: #ffffff solid 0.5rem;
+      display: none;
+      height: calc(100% - 2rem);
+      position: absolute;
+      width: calc(100% - 2rem);
+      transform: translate(-1.5rem, 0rem);
+    }
+
+    &:focus,
+    &:hover {
+      &::after {
+        display: block;
+      }
+    }
 
     @include m('login') {
       background-color: $light-green;
+      border-color: $light-green;
+
+      &:focus,
+      &:hover {
+        background-color: $green;
+      }
     }
 
     @include m('logout') {
       background-color: $light-red;
+      border-color: $light-red;
+
+      &:focus,
+      &:hover {
+        background-color: $red;
+      }
+    }
+  }
+
+  @include e('cta-text') {
+    font-size: 2rem;
+  }
+
+  @include e('cta-icon') {
+    height: auto;
+    width: 2rem;
+
+    path {
+      fill: #fff;
+    }
+  }
+
+  @include e('solicitation') {
+    background-color: $lightest-orange;
+    padding: 2rem;
+    position: relative;
+  }
+
+  @include e('solicitation-icon-wapper') {
+    display: block;
+    border-radius: 100%;
+    background-color: $lightest-orange;
+    height: 5rem;
+    position: absolute;
+    padding: 1rem;
+    left: 50%;
+    top: 0rem;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+  }
+
+  @include e('solicitation-icon') {
+    height: auto;
+    width: 100%;
+
+    path {
+      fill: #fff;
     }
   }
 }
