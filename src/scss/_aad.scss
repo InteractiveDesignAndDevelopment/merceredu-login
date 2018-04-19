@@ -34,11 +34,17 @@ $inside-spacing: 0.5rem;
 
   @include e('content') {
     margin: 0 auto;
-    padding: $outside-spacing $outside-spacing 5rem;
+    padding: $outside-spacing $outside-spacing 3rem;
 
     @include breakpoint($big) {
       width: 600px;
     }
+  }
+
+  @include e('heading') {
+    border-bottom: 0.1rem solid $light-grey;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   @include e('intro') {
@@ -102,7 +108,7 @@ $inside-spacing: 0.5rem;
   }
 
   @include e('cta-text') {
-    padding: 0 $inside-spacing 0;
+    padding-right: $inside-spacing;
   }
 
   @include e('cta-icon') {
