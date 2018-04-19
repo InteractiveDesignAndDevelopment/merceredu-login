@@ -64,8 +64,10 @@ class AADSSOMercer
 
         $html .= '<div class="aad__content">';
 
+        $html .= '<h2 class="aad__heading">Log in to %s</h2>';
+
         $html .= '<div class="aad__intro">';
-        $html .= 'Use the buttons below to access <strong>%s</strong> with your <strong>Mercer</strong> account.';
+        $html .= 'The buttons below log in your Mercer account through Microsoft\'s website.';
         $html .= '</div>';
 
         $html .= '<div class="aad__actions" role="navigation">';
