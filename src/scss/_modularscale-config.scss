@@ -1,0 +1,13 @@
+/**
+ * @author Todd Sayre
+ */
+
+$modularscale: (
+  base: 1rem,
+  768px: (
+    base: 1.2rem,
+  ),
+  1440px: (
+    base: 1.5rem,
+  )
+);

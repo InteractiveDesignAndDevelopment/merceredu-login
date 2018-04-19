@@ -5,31 +5,10 @@
 @import 'colors';
 
 body {
-  background-color: $light-grey !important;
-  box-sizing: border-box !important;
+  background-color: $light-grey;
+  box-sizing: border-box;
 
   * {
-    box-sizing: inherit !important;
+    box-sizing: inherit;
   }
-}
-
-a {
-  color: #fff !important;
-}
-
-h1 {
-  display: none !important;
-}
-
-#login {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-}
-
-#loginform {
-  border: 0.5rem solid $lightest-orange !important;
-  margin: 10% auto 0 auto !important;;
-  padding: 10% 10% !important;;
-  width: 90% !important;;
 }
