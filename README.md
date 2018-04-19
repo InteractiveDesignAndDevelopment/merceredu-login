@@ -1,11 +1,9 @@
-# wp-mu-login
+# aad-sso-wordpress-mercer
 
-This plugins assumes that these other plugins are installed and configured.
+This WordPress plugin customizes the [aad-sso-wordpress](https://github.com/psignoret/aad-sso-wordpress) alterations to the `wp-login.php` page.
+
+The idea is to make it easy to do the things users should be doing most often and make it hard to do the things users should be doing least often.
 
 ## Mockup
 
-The ideas you'll see [in Figma](https://www.figma.com/file/f8f1Npnzq7UCqDKRgQH332rB/Custom-WP-Login?node-id=20%3A2) are to make it easiest to do what we want users to do the most: login through Azure Active Directory. But also still allow for bypassing it when necessary. (Because that's inevitable.)
-
-## WordPress Plugins
-
-Currently, [https://github.com/psignoret/aad-sso-wordpress](Sign Sign-on with Azure Active Directory (for WordPress))
+[In Figma](https://www.figma.com/file/f8f1Npnzq7UCqDKRgQH332rB/Custom-WP-Login?node-id=20%3A2)
