@@ -12,8 +12,8 @@
 // Breakpoint
 @import 'breakpoint-config';
 
-$outside-spacing: 0.5rem;
-$inside-spacing: 1rem;
+$outside-spacing: 1rem;
+$inside-spacing: 0.5rem;
 
 @include b('aad') {
   background-color: $warm-black;
@@ -107,7 +107,7 @@ $inside-spacing: 1rem;
 
   @include e('cta-icon') {
     height: auto;
-    width: 16px;
+    width: 1rem;
 
     @include m('login') {
       path {
@@ -135,13 +135,13 @@ $inside-spacing: 1rem;
     background-color: $orange;
     border-radius: 100%;
     color: #fff;
-    height: 50px;
+    height: 3rem;
     padding: $inside-spacing;
     position: absolute;
     left: 50%;
-    top: 0rem;
+    top: 0;
     transform: translate(-50%, -50%);
-    width: 50px;
+    width: 3rem;
     z-index: 1;
   }
 
