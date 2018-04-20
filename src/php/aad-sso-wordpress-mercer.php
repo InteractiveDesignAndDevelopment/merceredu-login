@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: AADSSO Mercer Customizations
-Plugin URI: https://github.com/merceruniversity/wp-mu-login
+Plugin URI: https://github.com/merceruniversity/aad-sso-wordpress-mercer
 Description: A brief description of the Plugin.
 Version: 1.0
 Author: Todd Sayre
