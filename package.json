@@ -9,7 +9,7 @@
     "build": "run-p build:*",
     "build:css": "run-s build:css:*",
     "build:css:node-sass": "node-sass src/scss/index.scss build/aad-sso-wordpress-mercer.css",
-    "build:css:postcss": "postcss build/aad-sso-wordpress-mercer.css -u autoprefixer -o build/aad-sso-wordpress-mercer.css",
+    "build:css:postcss": "postcss build/aad-sso-wordpress-mercer.css -u autoprefixer -u postcss-viewport-units -o build/aad-sso-wordpress-mercer.css",
     "build:css:cssnano": "cssnano build/aad-sso-wordpress-mercer.css build/aad-sso-wordpress-mercer.css",
     "build:js": "browserify src/js/index.js -o build/aad-sso-wordpress-mercer.js -t [ babelify --presets [ env minify ] ]",
     "build:php": "cpy src/php/aad-sso-wordpress-mercer.php build/",
@@ -24,7 +24,7 @@
   "author": "Todd Sayre",
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "^8.1.0",
+    "autoprefixer": "^8.3.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-minify": "^0.4.0",
@@ -39,9 +39,11 @@
     "node-sass": "^4.8.3",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^5.0.0",
+    "postcss-viewport-units": "^0.1.4",
     "prepend-child": "^1.0.1",
     "rimraf": "^2.6.2",
     "sass-bem": "^2.6.5",
-    "sass-material-colors": "0.0.5"
+    "sass-material-colors": "0.0.5",
+    "viewport-units-buggyfill": "^0.6.2"
   }
 }
