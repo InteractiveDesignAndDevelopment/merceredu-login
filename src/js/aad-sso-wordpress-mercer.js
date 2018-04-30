@@ -20,8 +20,8 @@ export default class AadSsoWordPressMercer {
         }
 
         // console.log('proceeding');
-        AadSsoWordPressMercer.helpWith100vhCss();
         AadSsoWordPressMercer.prependAadToBody();
+        AadSsoWordPressMercer.aadDividerAfterAad();
         AadSsoWordPressMercer.copyAadSsoLinks();
         AadSsoWordPressMercer.removeAadSsoLoginFormText();
 
@@ -42,26 +42,12 @@ export default class AadSsoWordPressMercer {
     };
 
     /**
-     * Make mobile browsers behave better with 100vh CSS
      *
-     * https://brentstromberg.com/jank-free-vh-sections/
-     *
-     * Adapted to not use jQuery
      */
-    static helpWith100vhCss() {
-
-        // $heightOnLoad = $('.vc_row.vc_row-o-full-height.welcome-message-wrapper').height();
-        // console.log($heightOnLoad);
-        // $(window).resize(function() {
-        //     $('body.mobile .vc_row.vc_row-o-full-height.welcome-message-wrapper').css({
-        //         'min-height':$heightOnLoad
-        //     });
-        // });
-
+    static aadDividerAfterAad() {
         let aad = document.querySelector('.aad');
-        let height = `${aad.offsetHeight}px`;
-        console.log(height);
-        aad.style.minHeight = height;
+        let aadDivider = document.querySelector('.aad-divider');
+        aad.after(aadDivider);
     }
 
     /**

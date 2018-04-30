@@ -95,6 +95,8 @@ class AADSSOMercer
 
         $html .= '</div>';  // .aad
 
+        $html .= '<hr class="aad-divider">';
+
         $html .= '<div id="standard-login"></div>';
 
         printf($html, get_bloginfo('name'));
