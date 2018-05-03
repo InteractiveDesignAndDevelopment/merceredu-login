@@ -1,0 +1,12 @@
+/**
+ * @author Todd Sayre
+ */
+
+@import 'trig';
+
+$outside-spacing: 1rem;
+$inside-spacing: 0.5rem;
+
+$big-arrow-down-width: 100vw;
+$big-arrow-down-angle: 160deg;
+$big-arrow-down-height: ((sin(180deg - $big-arrow-down-angle) / 2) * $big-arrow-down-width);

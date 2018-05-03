@@ -9,23 +9,24 @@
 
 // Imports: Variables
 @import 'colors';
+@import 'config';
 
-@include b('aad-divider') {
+@include b('divider') {
   background-color: $orange;
   border: none;
   height: 100px;
-  margin: 0 0 100px;
-  padding: 0 0 100px;
+  margin: 0 0 $big-arrow-down-height;
+  padding: 0 0 $big-arrow-down-height;
   position: relative;
   overflow: visible;
-  width: 100%;
+  width: $big-arrow-down-width;
   z-index: 100;
 
   @include after() {
     border-style: solid;
-    border-width: 100px 50vw 0 50vw;
+    border-width: $big-arrow-down-height ($big-arrow-down-width / 2) 0 ($big-arrow-down-width / 2);
     border-color: $orange transparent transparent transparent;
-    bottom: -100px;
+    bottom: (-$big-arrow-down-height);
     content: '';
     height: 0;
     left: 0;

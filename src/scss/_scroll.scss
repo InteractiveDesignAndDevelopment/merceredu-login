@@ -1,0 +1,67 @@
+/**
+ * @author Todd Sayre
+ */
+
+// Imports: NPM
+@import '../../node_modules/sass-bem/bem';
+
+// Imports: Variables
+@import 'colors';
+@import 'config';
+
+@include b('scroll') {
+  background-color: $warm-black;
+  height: 30vh;
+  position: relative;
+  width: 100%;
+
+  @include after() {
+    border-style: solid;
+    border-width: $big-arrow-down-height ($big-arrow-down-width / 2) 0 ($big-arrow-down-width / 2);
+    border-color: $warm-black transparent transparent transparent;
+    bottom: (-$big-arrow-down-height);
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    z-index: 200;
+  }
+
+  @include e('content') {
+    bottom: -($big-arrow-down-height / 2);
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    width: 40vw;
+    z-index: 400;
+  }
+
+  @include e('icon-wrapper') {
+    display: block;
+    background-color: $orange;
+    border-radius: 100%;
+    height: 3rem;
+    margin: 0 auto;
+    padding: $inside-spacing;
+    top: 0;
+    width: 3rem;
+  }
+
+  @include e('icon') {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+
+    path {
+      fill: #fff;
+    }
+  }
+
+  @include e('text') {
+    color: #ffffff;
+    padding: $inside-spacing 0 0;
+    text-align: center;
+  }
+
+}

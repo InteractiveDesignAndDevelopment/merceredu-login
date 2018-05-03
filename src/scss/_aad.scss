@@ -9,12 +9,10 @@
 
 // Imports: Variables
 @import 'colors';
+@import 'config';
 
 // Imports: Breakpoint
 @import 'breakpoint-config';
-
-$outside-spacing: 1rem;
-$inside-spacing: 0.5rem;
 
 @include b('aad') {
   background-color: $warm-black;
@@ -23,24 +21,10 @@ $inside-spacing: 0.5rem;
   font-size: 18px;
   line-height: 1.5;
   max-width: 100%;
-  position: relative;
   width: 100vw;
 
   * {
     box-sizing: inherit;
-  }
-
-  @include after() {
-    border-style: solid;
-    border-width: 100px 50vw 0 50vw;
-    border-color: $warm-black transparent transparent transparent;
-    bottom: -100px;
-    content: '';
-    height: 0;
-    left: 0;
-    position: absolute;
-    width: 0;
-    z-index: 200;
   }
 
   @include e('content') {
@@ -85,6 +69,7 @@ $inside-spacing: 0.5rem;
 
   @include e('cta') {
     align-items: center;
+    box-shadow: 0.1rem 0.1rem 0.2rem #000000aa;
     display: flex;
     justify-content: space-between;
     padding: $inside-spacing;
@@ -97,24 +82,18 @@ $inside-spacing: 0.5rem;
       width: calc(50% - (#{$outside-spacing} / 2));
     }
 
+    &,
+    &:link,
+    &:visited {
+      color: #ffffff;
+    }
+
     @include m('login') {
       @extend %bg-color-green-800;
-
-      &,
-      &:link,
-      &:visited {
-        color: #fff;
-      }
     }
 
     @include m('logout') {
       @extend %bg-color-red-a700;
-
-      &,
-      &:link,
-      &:visited {
-        color: $warm-black;
-      }
     }
   }
 
@@ -123,57 +102,9 @@ $inside-spacing: 0.5rem;
   }
 
   @include e('cta-icon') {
+    fill: #ffffff;
     height: auto;
     width: 1rem;
-
-    @include m('login') {
-      path {
-        fill: #fff;
-      }
-    }
-
-    @include m('logout') {
-      path {
-        fill: $warm-black;
-      }
-    }
-
-  }
-
-  @include e('solicitation') {
-    padding: 1rem;
-    position: relative;
-    text-align: center;
-  }
-
-  @include e('solicitation-icon-wapper') {
-    display: block;
-    border-radius: 100%;
-    color: #fff;
-    height: 3rem;
-    padding: $inside-spacing;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-    width: 3rem;
-    z-index: 1;
-  }
-
-  @include e('solicitation-icon') {
-    height: auto;
-    max-width: 100%;
-    width: 100%;
-
-    path {
-      fill: #fff;
-    }
-  }
-
-  @include e('solicitation-text') {
-    padding: $inside-spacing 0 0;
-    position: relative;
-    z-index: 2;
   }
 
 }

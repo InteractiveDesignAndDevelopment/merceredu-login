@@ -15,13 +15,12 @@ export default class AadSsoWordPressMercer {
 
         if (! AadSsoWordPressMercer.isAadSsoWordPressPresent()) {
             // console.log('abandoning');
-            AadSsoWordPressMercer.removeAad();
+            AadSsoWordPressMercer.removeSso();
             return;
         }
 
         // console.log('proceeding');
-        AadSsoWordPressMercer.prependAadToBody();
-        AadSsoWordPressMercer.aadDividerAfterAad();
+        AadSsoWordPressMercer.prependSsoToBody();
         AadSsoWordPressMercer.copyAadSsoLinks();
         AadSsoWordPressMercer.removeAadSsoLoginFormText();
 
@@ -44,15 +43,6 @@ export default class AadSsoWordPressMercer {
     /**
      *
      */
-    static aadDividerAfterAad() {
-        let aad = document.querySelector('.aad');
-        let aadDivider = document.querySelector('.aad-divider');
-        aad.after(aadDivider);
-    }
-
-    /**
-     *
-     */
     static isAadSsoWordPressPresent() {
         let aadssoLoginFormText = document.querySelector('.aadsso-login-form-text');
         // console.log(aadssoLoginFormText);
@@ -63,18 +53,18 @@ export default class AadSsoWordPressMercer {
     /**
      * Move the `.aad` block out from the `#loginform` form to be the first child of the `body`
      */
-    static prependAadToBody() {
-        let aad = document.querySelector('.aad');
+    static prependSsoToBody() {
+        let sso = document.querySelector('.sso');
         let body = document.querySelector('body');
-        prependChild(body, aad);
+        prependChild(body, sso);
     };
 
     /**
      * Remove the AAD block
      */
-    static removeAad() {
-        let aad = document.querySelector('.aad');
-        aad.remove();
+    static removeSso() {
+        let sso = document.querySelector('.sso');
+        sso.remove();
     }
 
     /**
