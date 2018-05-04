@@ -5,6 +5,7 @@
 // Imports: NPM
 @import '../../node_modules/sass-bem/bem';
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import '../../node_modules/sass-material-colors/sass/sass-material-colors';
 @import '../../node_modules/sass-material-colors/sass/sass-material-colors-placeholders';
 
 // Imports: Variables
@@ -29,30 +30,27 @@
 
   @include e('content') {
     margin: 0 auto;
-    padding: $outside-spacing $outside-spacing 3rem;
+    padding: $outside-spacing;
 
     @include breakpoint($big) {
-      width: 600px;
+      width: 700px;
     }
   }
 
   @include e('heading') {
-    margin-bottom: ($outside-spacing * 2.5);
-    padding-bottom: $inside-spacing;
+    font-weight: 700;
+    margin-bottom: (($inside-spacing * 2) + $outside-spacing);
     position: relative;
 
     @include after() {
       background-color: $orange;
-      height: ($outside-spacing / 2);
+      height: $inside-spacing;
       content: '';
       left: 0;
-      top: $outside-spacing;
-      width: 5rem;
+      position: absolute;
+      top: calc(100% + #{$inside-spacing});
+      width: 12rem;
     }
-  }
-
-  @include e('intro') {
-    margin-bottom: $outside-spacing;
   }
 
   @include e('actions') {
@@ -91,10 +89,12 @@
 
   @include e('cta') {
     align-items: center;
+    border-left-width: $inside-spacing;
+    border-left-style: solid;
     box-shadow: 0.1rem 0.1rem 0.2rem #000000aa;
     display: flex;
     justify-content: space-between;
-    padding: $inside-spacing;
+    padding: $inside-spacing $inside-spacing $inside-spacing ($inside-spacing * 2);
     position: relative;
     text-decoration: none;
 
@@ -106,21 +106,26 @@
 
     @include m('login') {
       @extend %bg-color-green-800;
+
+      border-left-color: material-color('green', '900');
     }
 
     @include m('logout') {
       @extend %bg-color-red-a700;
+
+       border-left-color: material-color('red', '900');
     }
   }
 
   @include e('cta-text') {
     padding-right: $inside-spacing;
+    font-weight: 400;
   }
 
   @include e('cta-icon') {
     fill: #ffffff;
     height: auto;
-    width: 1rem;
+    width: 1.5rem;
   }
 
 }
