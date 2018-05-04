@@ -37,9 +37,18 @@
   }
 
   @include e('heading') {
-    border-bottom: 0.1rem solid $light-grey;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: ($outside-spacing * 2.5);
+    padding-bottom: $inside-spacing;
+    position: relative;
+
+    @include after() {
+      background-color: $orange;
+      height: ($outside-spacing / 2);
+      content: '';
+      left: 0;
+      top: $outside-spacing;
+      width: 5rem;
+    }
   }
 
   @include e('intro') {
@@ -47,7 +56,6 @@
   }
 
   @include e('actions') {
-
     display: block;
 
     @media (orientation: landscape) {
@@ -57,13 +65,27 @@
 
     > *+* {
       margin-bottom: 0;
-      margin-top: 1rem;
+      margin-top: $outside-spacing;
 
       @media (orientation: landscape) {
         & {
           margin: 0;
         }
       }
+    }
+  }
+
+  @include e('cta-wrapper') {
+    @media (orientation: landscape) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: calc(50% - (#{$outside-spacing} / 2));
+    }
+
+    > *+* {
+      margin-bottom: 0;
+      margin-top: $outside-spacing;
     }
   }
 
@@ -74,13 +96,7 @@
     justify-content: space-between;
     padding: $inside-spacing;
     position: relative;
-    text-align: center;
     text-decoration: none;
-    width: 100%;
-
-    @media (orientation: landscape) {
-      width: calc(50% - (#{$outside-spacing} / 2));
-    }
 
     &,
     &:link,
