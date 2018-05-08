@@ -30,14 +30,18 @@ export default class AadSsoWordPressMercer {
      * Add AADSSO-plugin-generated URLs to this-plugin-generated links
      */
     static copyAadSsoLinks() {
-        let aLogin = document.querySelector('.aadsso-login-form-text a[href*="authorize"]');
-        let aLogout = document.querySelector('.aadsso-login-form-text a[href*="logout"]');
-        let urlLogin = aLogin.getAttribute('href');
-        let urlLogout = aLogout.getAttribute('href');
-        let aMULogin = document.querySelector('.aad__cta--login');
-        let aMULogout = document.querySelector('.aad__cta--logout');
-        aMULogin.setAttribute('href', urlLogin);
-        aMULogout.setAttribute('href', urlLogout);
+        let aadSsoLoginFormLoginLink = document.querySelector('.aadsso-login-form-text a[href*="authorize"]');
+        let aadSsoLoginFormLogoutLink = document.querySelector('.aadsso-login-form-text a[href*="logout"]');
+        let urlLogin = aadSsoLoginFormLoginLink.getAttribute('href');
+        let urlLogout = aadSsoLoginFormLogoutLink.getAttribute('href');
+        let aadLoginLink = document.querySelector('.aad-login__cta--login');
+        let aadLogoutLink = document.querySelector('.aad-logout__cta--logout');
+        if (null !== aadLoginLink) {
+            aadLoginLink.setAttribute('href', urlLogin);
+        }
+        if (null !== aadLogoutLink) {
+            aadLogoutLink.setAttribute('href', urlLogout);
+        }
     };
 
     /**

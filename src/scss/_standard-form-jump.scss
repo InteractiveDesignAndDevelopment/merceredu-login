@@ -1,0 +1,125 @@
+/**
+ * @author Todd Sayre
+ */
+
+// Imports: NPM
+@import '../../node_modules/sass-bem/bem';
+
+// Imports: Variables
+@import 'colors';
+@import 'config';
+
+@include b('standard-form-jump') {
+  height: ($big-arrow-down-height * 3);
+  overflow: hidden;
+  position: relative;
+
+  @include before() {
+    border-style: solid;
+    border-width: $big-arrow-down-height ($big-arrow-down-width / 2) 0 ($big-arrow-down-width / 2);
+    bottom: $big-arrow-down-height;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    z-index: 200;
+  }
+
+  @include after() {
+    border-style: solid;
+    border-width: $big-arrow-down-height ($big-arrow-down-width / 2) 0 ($big-arrow-down-width / 2);
+    bottom: 0;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    z-index: 300;
+  }
+
+  @include e('text') {
+    bottom: calc(#{$big-arrow-down-height} + (#{$outside-spacing} * 4));
+    font-size: 0.8rem;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, 0);
+    width: 15rem;
+    z-index: 400;
+  }
+
+  @include e('icon-link') {
+    display: block;
+    border-radius: 100%;
+    bottom: calc(#{$big-arrow-down-height} + #{$outside-spacing});
+    height: 2rem;
+    left: 50%;
+    margin: 0 auto;
+    padding: ($inside-spacing / 2);
+    position: absolute;
+    transform: translate(-50%, 0);
+    width: 2rem;
+    z-index: 400;
+
+    @media (orientation: landscape) {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  @include e('icon') {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+
+    path {
+      fill: #fff;
+    }
+  }
+
+  @include m('after-logout') {
+    background-color: #f1f1f1;
+
+    @include before() {
+      background-color: $orange;
+      border-color: #f1f1f1 transparent transparent transparent;
+    }
+
+    @include after() {
+      background-color: $warm-black;
+      border-color: $orange transparent transparent transparent;
+    }
+
+    @include e('text') {
+      color: $warm-black;
+    }
+
+    @include e('icon-link') {
+      background-color: $warm-black;
+    }
+  }
+
+  @include m('after-login') {
+    background-color: $warm-black;
+
+    @include before() {
+      background-color: $orange;
+      border-color: $warm-black transparent transparent transparent;
+    }
+
+    @include after() {
+      background-color: #f1f1f1;
+      border-color: $orange transparent transparent transparent;
+    }
+
+    @include e('text') {
+      color: #ffffff;
+    }
+
+    @include e('icon-link') {
+      background-color: $orange;
+    }
+  }
+
+}

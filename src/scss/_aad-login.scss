@@ -15,18 +15,13 @@
 // Imports: Breakpoint
 @import 'breakpoint-config';
 
-@include b('aad') {
+@include b('aad-login') {
   background-color: $warm-black;
-  box-sizing: border-box;
   color: #fff;
   font-size: 18px;
   line-height: 1.5;
   max-width: 100%;
   width: 100vw;
-
-  * {
-    box-sizing: inherit;
-  }
 
   @include e('content') {
     margin: 0 auto;
@@ -53,48 +48,12 @@
     }
   }
 
-  @include e('actions') {
-    display: block;
-
-    @media (orientation: landscape) {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    > *+* {
-      margin-bottom: 0;
-      margin-top: $outside-spacing;
-
-      @media (orientation: landscape) {
-        & {
-          margin: 0;
-        }
-      }
-    }
-  }
-
-  @include e('cta-wrapper') {
-    @media (orientation: landscape) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: calc(50% - (#{$outside-spacing} / 2));
-    }
-
-    > *+* {
-      margin-bottom: 0;
-      margin-top: $outside-spacing;
-    }
-  }
-
   @include e('cta') {
     align-items: center;
-    border-left-width: $inside-spacing;
-    border-left-style: solid;
     box-shadow: 0.1rem 0.1rem 0.2rem #000000aa;
     display: flex;
-    justify-content: space-between;
-    padding: $inside-spacing $inside-spacing $inside-spacing ($inside-spacing * 2);
+    justify-content: flex-start;
+    padding: 0;
     position: relative;
     text-decoration: none;
 
@@ -106,20 +65,21 @@
 
     @include m('login') {
       @extend %bg-color-green-800;
-
-      border-left-color: material-color('green', '900');
     }
 
-    @include m('logout') {
-      @extend %bg-color-red-a700;
-
-       border-left-color: material-color('red', '900');
-    }
   }
 
   @include e('cta-text') {
-    padding-right: $inside-spacing;
+    padding: $inside-spacing;
     font-weight: 400;
+  }
+
+  @include e('cta-icon-wrapper') {
+    padding: $inside-spacing;
+
+    @include m('login') {
+      @extend %bg-color-green-900
+    }
   }
 
   @include e('cta-icon') {
