@@ -9,7 +9,7 @@
 @import 'colors';
 @import 'config';
 
-@include b('standard-form-jump') {
+@include b('jump') {
   height: ($big-arrow-down-height * 3);
   overflow: hidden;
   position: relative;
@@ -39,7 +39,7 @@
   }
 
   @include e('text') {
-    bottom: calc(#{$big-arrow-down-height} + (#{$outside-spacing} * 4));
+    bottom: calc(#{$big-arrow-down-height} + 2.5rem + (#{$outside-spacing} * 2));
     font-size: 0.8rem;
     left: 50%;
     position: absolute;
@@ -53,19 +53,14 @@
     display: block;
     border-radius: 100%;
     bottom: calc(#{$big-arrow-down-height} + #{$outside-spacing});
-    height: 2rem;
+    height: 2.5rem;
     left: 50%;
     margin: 0 auto;
     padding: ($inside-spacing / 2);
     position: absolute;
     transform: translate(-50%, 0);
-    width: 2rem;
+    width: 2.5rem;
     z-index: 400;
-
-    @media (orientation: landscape) {
-      height: 3rem;
-      width: 3rem;
-    }
   }
 
   @include e('icon') {

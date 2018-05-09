@@ -30,17 +30,17 @@ export default class AadSsoWordPressMercer {
      * Add AADSSO-plugin-generated URLs to this-plugin-generated links
      */
     static copyAadSsoLinks() {
-        let aadSsoLoginFormLoginLink = document.querySelector('.aadsso-login-form-text a[href*="authorize"]');
-        let aadSsoLoginFormLogoutLink = document.querySelector('.aadsso-login-form-text a[href*="logout"]');
-        let urlLogin = aadSsoLoginFormLoginLink.getAttribute('href');
-        let urlLogout = aadSsoLoginFormLogoutLink.getAttribute('href');
-        let aadLoginLink = document.querySelector('.aad-login__cta--login');
-        let aadLogoutLink = document.querySelector('.aad-logout__cta--logout');
-        if (null !== aadLoginLink) {
-            aadLoginLink.setAttribute('href', urlLogin);
+        let aadSsoLoginFormTextLogin = document.querySelector('.aadsso-login-form-text a[href*="authorize"]');
+        let aadSsoLoginFormTextLogout = document.querySelector('.aadsso-login-form-text a[href*="logout"]');
+        let urlLogin = aadSsoLoginFormTextLogin.getAttribute('href');
+        let urlLogout = aadSsoLoginFormTextLogout.getAttribute('href');
+        let ctaLogin = document.querySelector('.cta--login');
+        let ctaLogout = document.querySelector('cta--logout');
+        if (null !== ctaLogin) {
+            ctaLogin.setAttribute('href', urlLogin);
         }
-        if (null !== aadLogoutLink) {
-            aadLogoutLink.setAttribute('href', urlLogout);
+        if (null !== ctaLogout) {
+            ctaLogout.setAttribute('href', urlLogout);
         }
     };
 

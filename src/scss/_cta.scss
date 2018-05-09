@@ -1,0 +1,62 @@
+/**
+ * @author Todd Sayre
+ */
+
+// Imports: NPM
+@import '../../node_modules/sass-bem/bem';
+@import '../../node_modules/sass-material-colors/sass/sass-material-colors-placeholders';
+
+// Imports: Variables
+@import 'colors';
+@import 'config';
+
+@include b('cta') {
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 0.2rem #000000aa;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+
+  &,
+  &:link,
+  &:visited {
+    color: #ffffff;
+  }
+
+  @include m('logout') {
+    @extend %bg-color-red-a700;
+  }
+
+  @include m('login') {
+    @extend %bg-color-green-800;
+  }
+
+  @include e('text') {
+    padding: $inside-spacing;
+    font-weight: 400;
+  }
+
+  @include e('icon-wrapper') {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: $inside-spacing;
+
+    @include m('logout') {
+      @extend %bg-color-red-900;
+    }
+
+    @include m('login') {
+      @extend %bg-color-green-900;
+    }
+  }
+
+  @include e('icon') {
+    fill: #ffffff;
+    height: auto;
+    width: 1.5rem;
+  }
+}
+
