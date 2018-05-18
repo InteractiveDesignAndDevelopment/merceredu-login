@@ -10,9 +10,14 @@
 @import 'config';
 
 @include b('jump') {
+  box-sizing: border-box;
   height: ($big-arrow-down-height * 3);
   overflow: hidden;
   position: relative;
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
 
   @include before() {
     border-style: solid;

@@ -16,10 +16,15 @@
 @import 'breakpoint-config';
 
 @include b('section') {
+  box-sizing: border-box;
   font-size: 18px;
   line-height: 1.5;
   max-width: 100%;
   width: 100vw;
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
   strong {
     color: $orange;

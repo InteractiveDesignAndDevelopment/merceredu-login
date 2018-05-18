@@ -14,6 +14,7 @@
 @include b('divider') {
   background-color: $orange;
   border: none;
+  box-sizing: border-box;
   height: 100px;
   margin: 0 0 $big-arrow-down-height;
   padding: 0 0 $big-arrow-down-height;
@@ -21,6 +22,10 @@
   overflow: visible;
   width: $big-arrow-down-width;
   z-index: 100;
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
 
   @include after() {
     border-style: solid;
