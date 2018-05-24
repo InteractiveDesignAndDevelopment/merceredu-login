@@ -23,7 +23,7 @@
   width: $big-arrow-down-width;
   z-index: 100;
 
-  *, *::before, *::after {
+  &::before, &::after, *, *::before, *::after {
     box-sizing: inherit;
   }
 

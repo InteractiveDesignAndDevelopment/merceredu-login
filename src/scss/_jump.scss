@@ -15,18 +15,20 @@
   overflow: hidden;
   position: relative;
 
-  *, *::before, *::after {
+  &::before, &::after, *, *::before, *::after {
     box-sizing: inherit;
   }
 
   @include before() {
     border-style: solid;
     border-width: $big-arrow-down-height ($big-arrow-down-width / 2) 0 ($big-arrow-down-width / 2);
+    //border-width: $big-arrow-down-height calc(#{$calculable-big-arrow-down-width} / 2) 0;
     bottom: $big-arrow-down-height;
     content: '';
     height: 0;
-    left: 0;
+    left: 50%;
     position: absolute;
+    transform: translateX(-50%);
     width: 0;
     z-index: 200;
   }
@@ -34,17 +36,20 @@
   @include after() {
     border-style: solid;
     border-width: $big-arrow-down-height ($big-arrow-down-width / 2) 0 ($big-arrow-down-width / 2);
+    //border-width: $big-arrow-down-height calc(#{$calculable-big-arrow-down-width} / 2) 0;
     bottom: 0;
     content: '';
     height: 0;
-    left: 0;
+    left: 50%;
     position: absolute;
+    transform: translateX(-50%);
     width: 0;
     z-index: 300;
   }
 
   @include e('text') {
     bottom: calc(#{$big-arrow-down-height} + 2.5rem + (#{$outside-spacing} * 2));
+    //bottom: calc(#{$calculable-big-arrow-down-height} + 2.5rem + (#{$outside-spacing} * 2));
     font-size: 0.8rem;
     left: 50%;
     position: absolute;
@@ -58,6 +63,7 @@
     display: block;
     border-radius: 100%;
     bottom: calc(#{$big-arrow-down-height} + #{$outside-spacing});
+    //bottom: calc(#{$calculable-big-arrow-down-height} + #{$outside-spacing});
     height: 2.5rem;
     left: 50%;
     margin: 0 auto;

@@ -15,7 +15,7 @@
   font-family: Orkney, sans-serif;
   font-weight: 300;
 
-  *, *::before, *::after {
+  &::before, &::after, *, *::before, *::after {
     box-sizing: inherit;
   }
 }
