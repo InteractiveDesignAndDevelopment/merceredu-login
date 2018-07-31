@@ -5,7 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/MercerUniversity/aad-sso-wordpress-mercer.git",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Todd Sayre",
   "license": "MIT",
