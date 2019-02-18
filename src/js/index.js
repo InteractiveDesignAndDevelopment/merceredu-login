@@ -4,13 +4,11 @@
 
 'use strict';
 
-import domLoaded from 'dom-loaded';
+import { contentLoaded } from 'document-promises';
 import AadSsoWordPressMercer from './aad-sso-wordpress-mercer';
 
-import '../scss/index.scss';
+import '../scss/main.scss';
 
-const onLoad = function () {
-    new AadSsoWordPressMercer();
-};
-
-domLoaded.then(onLoad);
+contentLoaded.then(() => {
+  new AadSsoWordPressMercer();
+});

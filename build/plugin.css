@@ -1,0 +1,163 @@
+@font-face {
+  font-display: fallback;
+  font-family: 'Gentona';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Gentona Medium"), local("Gentona-Medium"); }
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Gentona';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Gentona Medium Italic"), local("Gentona-Medium-Italic"); }
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Gentona';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Gentona Bold"), local("Gentona-Bold"); }
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Gentona';
+  font-style: italic;
+  font-weight: 700;
+  src: local("Gentona Bold Italic"), local("Gentona-Bold-Italic"); }
+
+:root {
+  --color-white: #fff;
+  --color-black: #222;
+  --color-orange: #f76800;
+  --color-blue: #2197d0;
+  --color-red: #f9314a;
+  --color-purple: #8850f8;
+  --color-green: #6db644;
+  --color-grey-darker: #2f2f2f;
+  --color-grey-dark: #3f3f41;
+  --color-grey: #676767;
+  --color-grey-light: #999;
+  --color-grey-lighter: #d5d5d5;
+  --color-grey-lightest: #f5f5f5; }
+
+/**
+ * This block exists primarily for moving all the plugin-generated HTML easily all at once
+ * And setting the font is just for convenience
+ */
+.c-sso {
+  background-color: var(--color-black);
+  box-sizing: border-box;
+  color: var(--color-white);
+  font-family: Gentona, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  position: relative;
+  height: 100vh; }
+  .c-sso::before, .c-sso::after, .c-sso *, .c-sso *::before, .c-sso *::after {
+    box-sizing: inherit; }
+  .c-sso__inside {
+    font-size: 1.6rem;
+    line-height: 1; }
+  .c-sso__content {
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    padding: 5rem;
+    width: 60rem; }
+    @media (min-width: 750px) {
+      .c-sso__content {
+        grid-template-columns: 3fr 2fr 2fr; } }
+  .c-sso__heading {
+    grid-column: 1 / -1; }
+  .c-sso__hint {
+    font-size: 1.2rem; }
+  .c-sso__button {
+    border: 0;
+    border-radius: 50%;
+    height: 10rem;
+    font-size: 3rem;
+    width: 10rem; }
+    .c-sso__button--yes {
+      background-color: var(--color-orange);
+      color: var(--color-white);
+      grid-column: 2; }
+    .c-sso__button--no {
+      background-color: var(--color-grey-lighter);
+      color: var(--color-grey-darker);
+      grid-column: 3; }
+  .c-sso__invitation {
+    background-color: var(--color-orange);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%; }
+  .c-sso__invitation-button {
+    background-color: dodgerblue;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem; }
+  .c-sso__invitation-content {
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+    width: 60rem; }
+
+.i-icon, .i-icon__part {
+  display: block; }
+
+.i-icon {
+  --color: #fff;
+  --size: 4rem;
+  --thiccness: calc(var(--size) / 10);
+  --sqrt-2: 1.41421356237;
+  --sin-45deg: 0.70710678118;
+  --cos-45deg: 0.70710678118;
+  height: var(--size);
+  position: relative;
+  width: var(--size); }
+  .i-icon__part {
+    position: absolute; }
+
+.i-icon--circle-chevron-down .i-icon__part:nth-of-type(1) {
+  border: var(--thiccness) solid var(--color);
+  border-radius: 50%;
+  height: var(--size);
+  width: var(--size); }
+
+.i-icon--circle-chevron-down .i-icon__part:nth-of-type(2),
+.i-icon--circle-chevron-down .i-icon__part:nth-of-type(3) {
+  --side-height: var(--thiccness);
+  --side-width: calc((var(--size) - var(--thiccness)) / 2);
+  --translate-x-right-side: calc((var(--side-width) / 2) - var(--thiccness));
+  --translate-y-right-side: calc(var(--thiccness) / 2);
+  background-color: var(--color);
+  height: var(--side-height);
+  left: calc((var(--size) / 2) - (var(--side-width) / 2));
+  top: calc((var(--size) / 2) - (var(--side-height) / 2));
+  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate));
+  width: var(--side-width); }
+
+.i-icon--circle-chevron-down .i-icon__part:nth-of-type(2) {
+  --rotate: 45deg;
+  --translate-x: calc(-1 * var(--translate-x-right-side));
+  --translate-y: var(--translate-y-right-side); }
+
+.i-icon--circle-chevron-down .i-icon__part:nth-of-type(3) {
+  --rotate: -45deg;
+  --translate-x: var(--translate-x-right-side);
+  --translate-y: var(--translate-y-right-side); }
+
+.t-orange {
+  color: var(--color-orange); }
+
+.t-bg-orange {
+  background-color: var(--color-orange); }
+

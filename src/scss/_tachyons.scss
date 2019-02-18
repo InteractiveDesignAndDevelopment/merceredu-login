@@ -1,0 +1,11 @@
+.t {
+  &-orange {
+    color: var(--color-orange);
+  }
+
+  &-bg {
+    &-orange {
+      background-color: var(--color-orange);
+    }
+  }
+}
