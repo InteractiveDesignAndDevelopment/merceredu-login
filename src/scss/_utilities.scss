@@ -1,10 +1,3 @@
-/**
- * @author Todd Sayre
- */
-
-// NPM
-@import '../../node_modules/sass-bem/bem';
-
 @include u(visually-hidden) {
   position: absolute !important;
   height: 1px; width: 1px;

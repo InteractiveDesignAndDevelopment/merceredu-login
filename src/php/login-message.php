@@ -1,49 +1,62 @@
 <div class="c-sso">
 
-  <div class="c-sso__inside">
+  <div class="c-aad-login">
+    <div class="c-aad-login__inside">
 
-    <div class="c-sso__content">
+      <div class="c-aad-login__content">
 
-      <h1 class="c-sso__heading">
-        Log in to <?php echo get_bloginfo('name') ?>
-      </h1>
+        <h1 class="c-aad-login__heading">
+          Log in to <em><?php echo get_bloginfo('name') ?></em>
+        </h1>
 
-      <div class="c-sso__help">
-
-        <h2 class="c-sso__question">Are You a <span class="t-orange">Mercer</span> Employee?</h2>
-
-        <h3 class="c-sso__hint">Click yes to automagically log in via <abbr title="Single Sign-On">SSO</abbr>.</h3>
-
-        <h3 class="c-sso__hint">Click no to be directed to site log in via Username &amp; Password</h3>
-
-      </div>
-
-      <button class="c-sso__button c-sso__button--yes">Yes!</button>
-
-      <button class="c-sso__button c-sso__button--no">No.</button>
-
-    </div>
-
-    <div class="c-sso__invitation">
-
-      <div class="c-sso__invitation-content">
-
-        <button class="c-sso__invitation-button">
-          <span class="i-icon i-icon--circle-chevron-down">
-            <span class="i-icon__part"></span>
-            <span class="i-icon__part"></span>
-            <span class="i-icon__part"></span>
-          </span>
-        </button>
-
-        <div class="c-sso__invitation-text">
-          Scroll down to access <?php echo get_bloginfo('name') ?> via standard Log-in Form
+        <div>
+          Use your Mercer Office 365 account to log in to WordPress:
         </div>
 
+        <a class="c-aad-login__button c-aad-login__button--login" href="#">
+          Office 365 aad-login Log In
+        </a>
+
+        <p>
+          Log out everywhere you are using your Mercer Office 365 account:
+        </p>
+
+        <a class="c-aad-login__button c-aad-login__button--logout" href="#">
+          Office 365 SSO Log Out
+        </a>
+
       </div>
 
     </div>
 
+  </div>
+
+  <div class="c-wp-login-jump">
+
+    <div class="c-wp-login-jump__content">
+
+      <a class="c-wp-login-jump__button" href="#login">
+
+        <span class="i-icon i-icon--circle-chevron-down">
+          <span class="i-icon__part"></span>
+          <span class="i-icon__part"></span>
+          <span class="i-icon__part"></span>
+        </span>
+
+      </a>
+
+      <div class="c-wp-login-jump__text">
+        Scroll down for standard form
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="c-down-chevron-divider">
+    <div class="c-down-chevron-divider__part"></div>
+    <div class="c-down-chevron-divider__part"></div>
+    <div class="c-down-chevron-divider__part"></div>
   </div>
 
 </div>

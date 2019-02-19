@@ -1,21 +1,20 @@
-/**
- * @author Mercer University Digital Communications
- * @description Define colors for the Mercer web designs
- */
+:root {
+  // Fundamental Colors
+  --color-white: #fff;
+  --color-black: #222;
 
-// Normal colors
-$orange: #c95106;
-$light-tan: #f4eee5;
-$tan: #ff9858;
-$warm-black: #3f3c3b;
-$grey: #d3cbc6;
-$light-grey: #f4f2f1;
+  // Custom Colors
+  --color-orange: #f76800;
+  --color-blue: #2197d0;
+  --color-red: #f9314a;
+  --color-purple: #8850f8;
+  --color-green: #6db644;
 
-// Orange gradient
-$darkest-orange: #7f3304;
-$darker-orange: #983d05;
-$dark-orange: #b04706;
-// Orange (#c95106) goes here, and it's already defined
-$light-orange: #e25b08;
-$lighter-orange: #f7660c;
-$lightest-orange: #f77525;
+  // Custom Greys
+  --color-grey-darker: #2f2f2f;
+  --color-grey-dark: #3f3f41;
+  --color-grey: #676767;
+  --color-grey-light: #999;
+  --color-grey-lighter: #d5d5d5;
+  --color-grey-lightest: #f5f5f5;
+}
