@@ -5,66 +5,54 @@
 
 @include c('aad-login') {
   background-color: var(--color-black);
-  box-sizing: border-box;
   color: var(--color-white);
-  font-family: Gentona, sans-serif;
-  font-weight: 400;
-  font-size: 10px;
   position: relative;
-
-  &::before, &::after, *, *::before, *::after {
-    box-sizing: inherit;
-  }
-
-  @include e('inside') {
-    font-size: 1.6rem;
-    line-height: 1.2;
-  }
 
   @include e('content') {
     display: grid;
-    grid-gap: 5rem;
-    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+    line-height: 1.2;
     margin: 0 auto;
-    padding: 5rem;
-    width: 60rem;
+    max-width: 60rem;
+    padding: 1rem;
 
     @include for-larger-screens {
-      grid-template-columns: 3fr 2fr 2fr;
+      grid-template:
+        "heading            heading"
+        "log-in-description log-out-description"
+        "log-in-button      log-out-button";
     }
   }
 
   @include e('heading') {
     font-weight: normal;
-    grid-column: 1 / -1;
+    font-size: 2rem;
+
+    @include for-larger-screens {
+      grid-area: heading;
+    }
   }
 
-  @include e('question') {
-    margin-bottom: 3rem;
-  }
-
-  @include e('hint') {
-    font-size: 1.2rem;
-
-    &:not(:last-of-type) {
-      margin-bottom: 1rem;
+  @include e('description') {
+    @include for-larger-screens {
+      @include m('log-in') {
+        grid-area: log-in-description;
+      }
+      @include m('log-out') {
+        grid-area: log-out-description;
+      }
     }
   }
 
   @include e('button') {
-    align-items: center;
     border: 0;
-    border-radius: 50%;
-    display: grid;
-    height: 10rem;
-    font-size: 3rem;
-    justify-items: center;
+    font-size: 1.8rem;
+    padding: 1rem;
     text-decoration: none;
-    width: 10rem;
 
-    @include m('yes') {
-      background-color: var(--color-orange);
-      grid-column: 2;
+    @include m('log-in') {
+      background-color: var(--color-green-x-ffffff-nt-aa);
 
       &:active,
       &:focus,
@@ -73,18 +61,25 @@
       &:visited {
         color: var(--color-white);
       }
+
+      @include for-larger-screens {
+        grid-area: log-in-button;
+      }
     }
 
-    @include m('no') {
-      background-color: var(--color-grey-lighter);
-      grid-column: 3;
+    @include m('log-out') {
+      background-color: var(--color-red-x-222222-nt-aa);
 
       &:active,
       &:focus,
       &:hover,
       &:link,
       &:visited {
-        color: var(--color-grey-darker);
+        color: var(--color-black);
+      }
+
+      @include for-larger-screens {
+        grid-area: log-out-button;
       }
     }
   }

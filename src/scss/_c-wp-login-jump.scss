@@ -17,12 +17,9 @@
     font-size: 1.6rem;
     justify-content: center;
     justify-items: center;
+    padding: 1rem;
     line-height: 1.2;
     z-index: 3;
-
-    @include for-larger-screens {
-      transform: translateY(calc(var(--divider-height) / 4));
-    }
   }
 
   @include e('button') {

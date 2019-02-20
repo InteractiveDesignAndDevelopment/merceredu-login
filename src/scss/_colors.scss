@@ -1,20 +1,24 @@
 :root {
-  // Fundamental Colors
+  // Fundamental colors
   --color-white: #fff;
   --color-black: #222;
 
-  // Custom Colors
+  // Custom colors
   --color-orange: #f76800;
   --color-blue: #2197d0;
   --color-red: #f9314a;
   --color-purple: #8850f8;
   --color-green: #6db644;
 
-  // Custom Greys
+  // Custom greys
   --color-grey-darker: #2f2f2f;
   --color-grey-dark: #3f3f41;
   --color-grey: #676767;
   --color-grey-light: #999;
   --color-grey-lighter: #d5d5d5;
   --color-grey-lightest: #f5f5f5;
+
+  // Accessible colors
+  --color-red-x-222222-nt-aa: #F94358;
+  --color-green-x-ffffff-nt-aa: #4E8230;
 }

@@ -1,0 +1,8 @@
+@include a('button') {
+  @include m('log-in') {
+    background-color: yellow;
+  }
+  @include m('log-out') {
+    background-color: fuchsia;
+  }
+}

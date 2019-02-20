@@ -11,7 +11,9 @@
   --color-grey: #676767;
   --color-grey-light: #999;
   --color-grey-lighter: #d5d5d5;
-  --color-grey-lightest: #f5f5f5; }
+  --color-grey-lightest: #f5f5f5;
+  --color-red-x-222222-nt-aa: #F94358;
+  --color-green-x-ffffff-nt-aa: #4E8230; }
 
 @font-face {
   font-display: fallback;
@@ -87,11 +89,14 @@
   --translate-y: var(--translate-y-right-side); }
 
 .c-sso {
-  --sin-10deg: 0.17364817766;
-  --cos-10deg: 0.98480775301;
-  --divider-angle: 10deg;
-  --divider-width: 110vw;
-  --divider-height: calc(var(--divider-width) * var(--sin-10deg)); }
+  box-sizing: border-box;
+  font-family: Gentona, sans-serif;
+  font-weight: 400;
+  font-size: 10px; }
+  .c-sso::before, .c-sso::after, .c-sso *, .c-sso *::before, .c-sso *::after {
+    box-sizing: inherit; }
+  .c-sso__inside {
+    font-size: 1.6rem; }
 
 /**
  * This block exists primarily for moving all the plugin-generated HTML easily all at once
@@ -99,56 +104,49 @@
  */
 .c-aad-login {
   background-color: var(--color-black);
-  box-sizing: border-box;
   color: var(--color-white);
-  font-family: Gentona, sans-serif;
-  font-weight: 400;
-  font-size: 10px;
   position: relative; }
-  .c-aad-login::before, .c-aad-login::after, .c-aad-login *, .c-aad-login *::before, .c-aad-login *::after {
-    box-sizing: inherit; }
-  .c-aad-login__inside {
-    font-size: 1.6rem;
-    line-height: 1.2; }
   .c-aad-login__content {
     display: grid;
-    grid-gap: 5rem;
-    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+    line-height: 1.2;
     margin: 0 auto;
-    padding: 5rem;
-    width: 60rem; }
+    max-width: 60rem;
+    padding: 1rem; }
     @media (min-width: 750px) {
       .c-aad-login__content {
-        grid-template-columns: 3fr 2fr 2fr; } }
+        grid-template: "heading            heading" "log-in-description log-out-description" "log-in-button      log-out-button"; } }
   .c-aad-login__heading {
     font-weight: normal;
-    grid-column: 1 / -1; }
-  .c-aad-login__question {
-    margin-bottom: 3rem; }
-  .c-aad-login__hint {
-    font-size: 1.2rem; }
-    .c-aad-login__hint:not(:last-of-type) {
-      margin-bottom: 1rem; }
+    font-size: 2rem; }
+    @media (min-width: 750px) {
+      .c-aad-login__heading {
+        grid-area: heading; } }
+  @media (min-width: 750px) {
+    .c-aad-login__description--log-in {
+      grid-area: log-in-description; }
+    .c-aad-login__description--log-out {
+      grid-area: log-out-description; } }
   .c-aad-login__button {
-    align-items: center;
     border: 0;
-    border-radius: 50%;
-    display: grid;
-    height: 10rem;
-    font-size: 3rem;
-    justify-items: center;
-    text-decoration: none;
-    width: 10rem; }
-    .c-aad-login__button--yes {
-      background-color: var(--color-orange);
-      grid-column: 2; }
-      .c-aad-login__button--yes:active, .c-aad-login__button--yes:focus, .c-aad-login__button--yes:hover, .c-aad-login__button--yes:link, .c-aad-login__button--yes:visited {
+    font-size: 1.8rem;
+    padding: 1rem;
+    text-decoration: none; }
+    .c-aad-login__button--log-in {
+      background-color: var(--color-green-x-ffffff-nt-aa); }
+      .c-aad-login__button--log-in:active, .c-aad-login__button--log-in:focus, .c-aad-login__button--log-in:hover, .c-aad-login__button--log-in:link, .c-aad-login__button--log-in:visited {
         color: var(--color-white); }
-    .c-aad-login__button--no {
-      background-color: var(--color-grey-lighter);
-      grid-column: 3; }
-      .c-aad-login__button--no:active, .c-aad-login__button--no:focus, .c-aad-login__button--no:hover, .c-aad-login__button--no:link, .c-aad-login__button--no:visited {
-        color: var(--color-grey-darker); }
+      @media (min-width: 750px) {
+        .c-aad-login__button--log-in {
+          grid-area: log-in-button; } }
+    .c-aad-login__button--log-out {
+      background-color: var(--color-red-x-222222-nt-aa); }
+      .c-aad-login__button--log-out:active, .c-aad-login__button--log-out:focus, .c-aad-login__button--log-out:hover, .c-aad-login__button--log-out:link, .c-aad-login__button--log-out:visited {
+        color: var(--color-black); }
+      @media (min-width: 750px) {
+        .c-aad-login__button--log-out {
+          grid-area: log-out-button; } }
 
 .c-wp-login-jump {
   align-items: center;
@@ -166,11 +164,9 @@
     font-size: 1.6rem;
     justify-content: center;
     justify-items: center;
+    padding: 1rem;
     line-height: 1.2;
     z-index: 3; }
-    @media (min-width: 750px) {
-      .c-wp-login-jump__content {
-        transform: translateY(calc(var(--divider-height) / 4)); } }
   .c-wp-login-jump__button {
     align-items: center;
     background-color: var(--color-orange);
@@ -190,37 +186,61 @@
     text-align: center;
     width: 60rem; }
 
-.c-down-chevron-divider {
-  height: var(--divider-height);
+.c-angle-divider {
+  --divider-angle: 10deg;
+  --divider-sin: 0.17365;
+  --divider-cos: 0.98481;
+  background-color: var(--below-color);
+  height: 0;
+  padding: 0 0 calc(100% * var(--divider-sin));
   overflow: hidden;
   position: relative; }
-  .c-down-chevron-divider__part:nth-of-type(1) {
-    background-color: var(--color-black);
-    height: calc(var(--divider-height) / 2);
-    width: var(--divider-width);
+  .c-angle-divider--between-logged-out-and-aad {
+    --above-color: var(--color-grey-lighter);
+    --divider-color: var(--color-grey-lighter);
+    --below-color: var(--color-black); }
+  .c-angle-divider--between-aad-and-wp-login {
+    --above-color: var(--color-black);
+    --divider-color: var(--color-orange);
+    --below-color: transparent; }
+  .c-angle-divider__part:nth-of-type(1) {
+    background-color: var(--above-color);
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+    height: 50%;
+    position: absolute;
+    transform: scaleY(1.1);
+    transform-origin: top center;
+    width: 100%;
     z-index: 1; }
-  .c-down-chevron-divider__part:nth-of-type(2), .c-down-chevron-divider__part:nth-of-type(3) {
-    --part-width: calc((var(--divider-width) / 2) + var(--divider-height) * var(--sin-10deg) * 2);
-    --part-height: calc(var(--divider-height) / 2);
-    --dtx: calc((var(--part-width) / 2) - (var(--part-height) * var(--sin-10deg)));
-    --dty: 0px;
-    background-color: var(--color-orange);
+  .c-angle-divider__part:nth-of-type(2), .c-angle-divider__part:nth-of-type(3), .c-angle-divider__part:nth-of-type(4), .c-angle-divider__part:nth-of-type(5) {
+    background-color: var(--divider-color);
     bottom: 0;
     content: '';
-    height: var(--part-height);
-    left: 50%;
+    height: 25%;
     position: absolute;
-    transform: translate(var(--tx), var(--ty)) rotate(var(--angle));
-    width: var(--part-width);
+    transform: rotate(var(--rotate)) scaleX(1.1) scaleY(1.2);
+    width: 50%;
     z-index: 2; }
-  .c-down-chevron-divider__part:nth-of-type(2) {
-    --angle: var(--divider-angle);
-    --tx: -100%;
-    --ty: 0px;
-    transform-origin: right bottom; }
-  .c-down-chevron-divider__part:nth-of-type(3) {
-    --angle: calc(-1 * var(--divider-angle));
-    --tx: 0px;
-    --ty: 0px;
+  .c-angle-divider__part:nth-of-type(2), .c-angle-divider__part:nth-of-type(3) {
+    --rotate: var(--divider-angle); }
+  .c-angle-divider__part:nth-of-type(4), .c-angle-divider__part:nth-of-type(5) {
+    --rotate: calc(-1 * var(--divider-angle)); }
+  .c-angle-divider__part:nth-of-type(2), .c-angle-divider__part:nth-of-type(4) {
+    top: 0; }
+  .c-angle-divider__part:nth-of-type(3), .c-angle-divider__part:nth-of-type(5) {
+    bottom: 0; }
+  .c-angle-divider__part:nth-of-type(2) {
+    left: 0;
+    top: 0;
+    transform-origin: left top; }
+  .c-angle-divider__part:nth-of-type(3) {
+    transform-origin: right bottom;
+    right: 50%; }
+  .c-angle-divider__part:nth-of-type(4) {
+    transform-origin: right top;
+    right: 0; }
+  .c-angle-divider__part:nth-of-type(5) {
+    left: 50%;
     transform-origin: left bottom; }
 

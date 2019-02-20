@@ -11,6 +11,10 @@ const removeSso = () => document.querySelector('.c-sso').remove();
 
 const removeAadSsoLoginFormText = () => document.querySelector('.aadsso-login-form-text').remove();
 
+const focusWpUserLoginField = () => document.querySelector('#user_login').focus();
+
+const focusAadLoginButton = () => document.querySelector('.c-aad-login__button--log-in').focus();
+
 const copyAadSsoLinks = () => {
   const aadSsoLoginFormTextLogin = document.querySelector(
     '.aadsso-login-form-text a[href*="authorize"]'
@@ -20,24 +24,36 @@ const copyAadSsoLinks = () => {
   );
   const urlLogin = aadSsoLoginFormTextLogin.getAttribute('href');
   const urlLogout = aadSsoLoginFormTextLogout.getAttribute('href');
-  const ctaLogin = document.querySelector('.c-sso__button--yes');
-  // const ctaLogout = document.querySelector('cta--logout');
-  if (null !== ctaLogin) {
-    ctaLogin.setAttribute('href', urlLogin);
+  const ssoLogInButton = document.querySelector('.c-aad-login__button--log-in');
+  const ssoLogOutButton = document.querySelector('.c-aad-login__button--log-out');
+  if (null !== ssoLogInButton) {
+    ssoLogInButton.setAttribute('href', urlLogin);
   }
-  // if (null !== ctaLogout) {
-  //   ctaLogout.setAttribute('href', urlLogout);
-  // }
+  if (null !== ssoLogOutButton) {
+    ssoLogOutButton.setAttribute('href', urlLogout);
+  }
+};
+
+const handleClickOnWpLoginJumpButton = () => {
+  focusWpUserLoginField();
 };
 
 contentLoaded.then(() => {
   if (!isAadSsoWordPressPresent()) {
     console.error('Abandoning');
     removeSso();
+    focusWpUserLoginField();
     return;
   }
+
   console.info('Proceeding');
+
+  const wpLoginJumpButton = document.querySelector('.c-wp-login-jump__button');
+
   prependSsoToBody();
   copyAadSsoLinks();
   removeAadSsoLoginFormText();
+  focusAadLoginButton();
+
+  wpLoginJumpButton.addEventListener('click', handleClickOnWpLoginJumpButton);
 });

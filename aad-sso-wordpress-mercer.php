@@ -60,7 +60,7 @@ class AADSSOMercer
         $html = '';
         $showAadLogoutMessage = 'true' == $_GET['loggedout'];
 
-        include 'src/php/login-message.php';
+        include 'src/php/c-sso.php';
     }
 
     /**
