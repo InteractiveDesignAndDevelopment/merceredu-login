@@ -1,7 +1,7 @@
 // SASS NPM Imports
 @import '../../node_modules/sass-bem/bem';
 
-// Prerequesistes
+// Prerequesistes (These are ordered specifically)
 @import 'mixins';
 @import 'colors';
 @import 'fonts';
@@ -9,7 +9,10 @@
 @import 'trig';
 
 // BEM Components
-@import 'c-sso';
 @import 'c-aad-login';
+@import 'c-button';
+@import 'c-chevron-divider';
+@import 'c-logged-out-follow-up';
+@import 'c-sso';
+@import 'c-triangle-divider';
 @import 'c-wp-login-jump';
-@import 'c-angle-divider';

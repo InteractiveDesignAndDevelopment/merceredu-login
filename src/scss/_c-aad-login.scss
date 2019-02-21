@@ -44,43 +44,4 @@
       }
     }
   }
-
-  @include e('button') {
-    border: 0;
-    font-size: 1.8rem;
-    padding: 1rem;
-    text-decoration: none;
-
-    @include m('log-in') {
-      background-color: var(--color-green-x-ffffff-nt-aa);
-
-      &:active,
-      &:focus,
-      &:hover,
-      &:link,
-      &:visited {
-        color: var(--color-white);
-      }
-
-      @include for-larger-screens {
-        grid-area: log-in-button;
-      }
-    }
-
-    @include m('log-out') {
-      background-color: var(--color-red-x-222222-nt-aa);
-
-      &:active,
-      &:focus,
-      &:hover,
-      &:link,
-      &:visited {
-        color: var(--color-black);
-      }
-
-      @include for-larger-screens {
-        grid-area: log-out-button;
-      }
-    }
-  }
 }

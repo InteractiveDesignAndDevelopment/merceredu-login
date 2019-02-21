@@ -88,16 +88,6 @@
   --translate-x: var(--translate-x-right-side);
   --translate-y: var(--translate-y-right-side); }
 
-.c-sso {
-  box-sizing: border-box;
-  font-family: Gentona, sans-serif;
-  font-weight: 400;
-  font-size: 10px; }
-  .c-sso::before, .c-sso::after, .c-sso *, .c-sso *::before, .c-sso *::after {
-    box-sizing: inherit; }
-  .c-sso__inside {
-    font-size: 1.6rem; }
-
 /**
  * This block exists primarily for moving all the plugin-generated HTML easily all at once
  * And setting the font is just for convenience
@@ -128,40 +118,89 @@
       grid-area: log-in-description; }
     .c-aad-login__description--log-out {
       grid-area: log-out-description; } }
-  .c-aad-login__button {
-    border: 0;
-    font-size: 1.8rem;
-    padding: 1rem;
-    text-decoration: none; }
-    .c-aad-login__button--log-in {
-      background-color: var(--color-green-x-ffffff-nt-aa); }
-      .c-aad-login__button--log-in:active, .c-aad-login__button--log-in:focus, .c-aad-login__button--log-in:hover, .c-aad-login__button--log-in:link, .c-aad-login__button--log-in:visited {
-        color: var(--color-white); }
-      @media (min-width: 750px) {
-        .c-aad-login__button--log-in {
-          grid-area: log-in-button; } }
-    .c-aad-login__button--log-out {
-      background-color: var(--color-red-x-222222-nt-aa); }
-      .c-aad-login__button--log-out:active, .c-aad-login__button--log-out:focus, .c-aad-login__button--log-out:hover, .c-aad-login__button--log-out:link, .c-aad-login__button--log-out:visited {
-        color: var(--color-black); }
-      @media (min-width: 750px) {
-        .c-aad-login__button--log-out {
-          grid-area: log-out-button; } }
+
+.c-button {
+  border: 0;
+  display: inline-grid;
+  font-size: 1.8rem;
+  padding: 1rem;
+  text-decoration: none; }
+  .c-button--log-in {
+    background-color: var(--color-green-x-ffffff-nt-aa); }
+    .c-button--log-in:active, .c-button--log-in:focus, .c-button--log-in:hover, .c-button--log-in:link, .c-button--log-in:visited {
+      color: var(--color-white); }
+    @media (min-width: 750px) {
+      .c-button--log-in {
+        grid-area: log-in-button; } }
+  .c-button--log-out {
+    background-color: var(--color-red-x-222222-nt-aa); }
+    .c-button--log-out:active, .c-button--log-out:focus, .c-button--log-out:hover, .c-button--log-out:link, .c-button--log-out:visited {
+      color: var(--color-black); }
+    @media (min-width: 750px) {
+      .c-button--log-out {
+        grid-area: log-out-button; } }
+
+.c-chevron-divider {
+  background-color: var(--color);
+  height: 8rem;
+  position: relative; }
+  .c-chevron-divider__triangle, e {
+    display: block;
+    fill: var(--background-color);
+    height: 3rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    transform: scaleY(1.01); }
+  .c-chevron-divider__triangle {
+    top: 0;
+    transform-origin: center bottom; }
+  .c-chevron-divider__anti-triangle {
+    bottom: 0;
+    transform-origin: center top; }
+
+.c-logged-out-follow-up {
+  background-color: var(--color-grey-lighter); }
+  .c-logged-out-follow-up__content {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1rem 1rem 0; }
+  .c-logged-out-follow-up__heading {
+    line-height: 1.2;
+    margin-bottom: 1rem; }
+  .c-logged-out-follow-up__message {
+    margin-bottom: 1rem; }
+  .c-logged-out-follow-up__invitation {
+    margin-bottom: 1rem; }
+  .c-logged-out-follow-up__log-out-button-container {
+    text-align: center; }
+
+.c-sso {
+  box-sizing: border-box;
+  font-family: Gentona, sans-serif;
+  font-weight: 400;
+  font-size: 10px; }
+  .c-sso::before, .c-sso::after, .c-sso *, .c-sso *::before, .c-sso *::after {
+    box-sizing: inherit; }
+  .c-sso__inside {
+    font-size: 1.6rem; }
+
+.c-triangle-divider__triangle {
+  fill: var(--color-black);
+  height: 3rem;
+  width: 100%; }
 
 .c-wp-login-jump {
   align-items: center;
-  background-color: var(--color-black);
-  box-sizing: border-box;
-  color: var(--color-white);
-  font-family: Gentona, sans-serif;
-  font-weight: 400;
-  font-size: 10px;
   text-align: center; }
-  .c-wp-login-jump::before, .c-wp-login-jump::after, .c-wp-login-jump *, .c-wp-login-jump *::before, .c-wp-login-jump *::after {
-    box-sizing: inherit; }
+  .c-wp-login-jump--between-logged-out-and-aad {
+    background-color: var(--color-grey-lighter);
+    color: var(--color-black); }
+  .c-wp-login-jump--between-aad-and-wp-login {
+    background-color: var(--color-black);
+    color: var(--color-white); }
   .c-wp-login-jump__content {
     display: inline-grid;
-    font-size: 1.6rem;
     justify-content: center;
     justify-items: center;
     padding: 1rem;
@@ -185,62 +224,4 @@
     padding: 3rem;
     text-align: center;
     width: 60rem; }
-
-.c-angle-divider {
-  --divider-angle: 10deg;
-  --divider-sin: 0.17365;
-  --divider-cos: 0.98481;
-  background-color: var(--below-color);
-  height: 0;
-  padding: 0 0 calc(100% * var(--divider-sin));
-  overflow: hidden;
-  position: relative; }
-  .c-angle-divider--between-logged-out-and-aad {
-    --above-color: var(--color-grey-lighter);
-    --divider-color: var(--color-grey-lighter);
-    --below-color: var(--color-black); }
-  .c-angle-divider--between-aad-and-wp-login {
-    --above-color: var(--color-black);
-    --divider-color: var(--color-orange);
-    --below-color: transparent; }
-  .c-angle-divider__part:nth-of-type(1) {
-    background-color: var(--above-color);
-    border-bottom-left-radius: 50% 100%;
-    border-bottom-right-radius: 50% 100%;
-    height: 50%;
-    position: absolute;
-    transform: scaleY(1.1);
-    transform-origin: top center;
-    width: 100%;
-    z-index: 1; }
-  .c-angle-divider__part:nth-of-type(2), .c-angle-divider__part:nth-of-type(3), .c-angle-divider__part:nth-of-type(4), .c-angle-divider__part:nth-of-type(5) {
-    background-color: var(--divider-color);
-    bottom: 0;
-    content: '';
-    height: 25%;
-    position: absolute;
-    transform: rotate(var(--rotate)) scaleX(1.1) scaleY(1.2);
-    width: 50%;
-    z-index: 2; }
-  .c-angle-divider__part:nth-of-type(2), .c-angle-divider__part:nth-of-type(3) {
-    --rotate: var(--divider-angle); }
-  .c-angle-divider__part:nth-of-type(4), .c-angle-divider__part:nth-of-type(5) {
-    --rotate: calc(-1 * var(--divider-angle)); }
-  .c-angle-divider__part:nth-of-type(2), .c-angle-divider__part:nth-of-type(4) {
-    top: 0; }
-  .c-angle-divider__part:nth-of-type(3), .c-angle-divider__part:nth-of-type(5) {
-    bottom: 0; }
-  .c-angle-divider__part:nth-of-type(2) {
-    left: 0;
-    top: 0;
-    transform-origin: left top; }
-  .c-angle-divider__part:nth-of-type(3) {
-    transform-origin: right bottom;
-    right: 50%; }
-  .c-angle-divider__part:nth-of-type(4) {
-    transform-origin: right top;
-    right: 0; }
-  .c-angle-divider__part:nth-of-type(5) {
-    left: 50%;
-    transform-origin: left bottom; }
 

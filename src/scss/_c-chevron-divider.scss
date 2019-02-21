@@ -1,0 +1,25 @@
+@include c('chevron-divider') {
+  background-color: var(--color);
+  height: 8rem;
+  position: relative;
+
+  @include parse('e:triangle, e:anti-triangle') {
+    display: block;
+    fill: var(--background-color);
+    height: 3rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    transform: scaleY(1.01);
+  }
+
+  @include e('triangle') {
+    top: 0;
+    transform-origin: center bottom;
+  }
+
+  @include e('anti-triangle') {
+    bottom: 0;
+    transform-origin: center top;
+  }
+}

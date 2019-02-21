@@ -1,0 +1,26 @@
+@include c('logged-out-follow-up') {
+  background-color: var(--color-grey-lighter);
+
+  @include e('content') {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1rem 1rem 0;
+  }
+
+  @include e('heading') {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  @include e('message') {
+    margin-bottom: 1rem;
+  }
+
+  @include e('invitation') {
+    margin-bottom: 1rem;
+  }
+
+  @include e('log-out-button-container') {
+    text-align: center;
+  }
+}
