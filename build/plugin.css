@@ -56,7 +56,8 @@
   height: var(--size);
   position: relative;
   width: var(--size); }
-  .i-icon__part {
+
+.i-icon__part {
     position: absolute; }
 
 .i-icon--circle-chevron-down .i-icon__part:nth-of-type(1) {
@@ -75,7 +76,8 @@
   height: var(--side-height);
   left: calc((var(--size) / 2) - (var(--side-width) / 2));
   top: calc((var(--size) / 2) - (var(--side-height) / 2));
-  transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate));
+  -webkit-transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate));
+          transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate));
   width: var(--side-width); }
 
 .i-icon--circle-chevron-down .i-icon__part:nth-of-type(2) {
@@ -92,11 +94,15 @@
  * This block exists primarily for moving all the plugin-generated HTML easily all at once
  * And setting the font is just for convenience
  */
+
 .c-aad-login {
+  background-color: #222;
   background-color: var(--color-black);
+  color: #fff;
   color: var(--color-white);
   position: relative; }
-  .c-aad-login__content {
+
+.c-aad-login__content {
     display: grid;
     grid-gap: 1rem;
     grid-auto-flow: row;
@@ -104,16 +110,20 @@
     margin: 0 auto;
     max-width: 60rem;
     padding: 1rem; }
-    @media (min-width: 750px) {
+
+@media (min-width: 750px) {
       .c-aad-login__content {
         grid-template: "heading            heading" "log-in-description log-out-description" "log-in-button      log-out-button"; } }
-  .c-aad-login__heading {
+
+.c-aad-login__heading {
     font-weight: normal;
     font-size: 2rem; }
-    @media (min-width: 750px) {
+
+@media (min-width: 750px) {
       .c-aad-login__heading {
         grid-area: heading; } }
-  @media (min-width: 750px) {
+
+@media (min-width: 750px) {
     .c-aad-login__description--log-in {
       grid-area: log-in-description; }
     .c-aad-login__description--log-out {
@@ -125,54 +135,79 @@
   font-size: 1.8rem;
   padding: 1rem;
   text-decoration: none; }
-  .c-button--log-in {
+
+.c-button--log-in {
+    background-color: #4E8230;
     background-color: var(--color-green-x-ffffff-nt-aa); }
-    .c-button--log-in:active, .c-button--log-in:focus, .c-button--log-in:hover, .c-button--log-in:link, .c-button--log-in:visited {
+
+.c-button--log-in:active, .c-button--log-in:focus, .c-button--log-in:hover, .c-button--log-in:link, .c-button--log-in:visited {
+      color: #fff;
       color: var(--color-white); }
-    @media (min-width: 750px) {
+
+@media (min-width: 750px) {
       .c-button--log-in {
         grid-area: log-in-button; } }
-  .c-button--log-out {
+
+.c-button--log-out {
+    background-color: #F94358;
     background-color: var(--color-red-x-222222-nt-aa); }
-    .c-button--log-out:active, .c-button--log-out:focus, .c-button--log-out:hover, .c-button--log-out:link, .c-button--log-out:visited {
+
+.c-button--log-out:active, .c-button--log-out:focus, .c-button--log-out:hover, .c-button--log-out:link, .c-button--log-out:visited {
+      color: #222;
       color: var(--color-black); }
-    @media (min-width: 750px) {
+
+@media (min-width: 750px) {
       .c-button--log-out {
         grid-area: log-out-button; } }
 
 .c-chevron-divider {
-  background-color: var(--color);
-  height: 8rem;
+  background-color: #f76800;
+  background-color: var(--color-orange);
+  height: 20rem;
   position: relative; }
-  .c-chevron-divider__triangle, e {
+
+.c-chevron-divider__triangle, .c-chevron-divider__anti-triangle {
     display: block;
-    fill: var(--background-color);
-    height: 3rem;
+    height: 10rem;
     left: 0;
     position: absolute;
     width: 100%;
-    transform: scaleY(1.01); }
-  .c-chevron-divider__triangle {
+    -webkit-transform: scaleY(1.01);
+            transform: scaleY(1.01); }
+
+.c-chevron-divider__triangle {
+    fill: #222;
+    fill: var(--color-black);
     top: 0;
-    transform-origin: center bottom; }
-  .c-chevron-divider__anti-triangle {
+    -webkit-transform-origin: center bottom;
+            transform-origin: center bottom; }
+
+.c-chevron-divider__anti-triangle {
     bottom: 0;
-    transform-origin: center top; }
+    fill: #f1f1f1;
+    -webkit-transform-origin: center top;
+            transform-origin: center top; }
 
 .c-logged-out-follow-up {
+  background-color: #d5d5d5;
   background-color: var(--color-grey-lighter); }
-  .c-logged-out-follow-up__content {
+
+.c-logged-out-follow-up__content {
     max-width: 750px;
     margin: 0 auto;
     padding: 1rem 1rem 0; }
-  .c-logged-out-follow-up__heading {
+
+.c-logged-out-follow-up__heading {
     line-height: 1.2;
     margin-bottom: 1rem; }
-  .c-logged-out-follow-up__message {
+
+.c-logged-out-follow-up__message {
     margin-bottom: 1rem; }
-  .c-logged-out-follow-up__invitation {
+
+.c-logged-out-follow-up__invitation {
     margin-bottom: 1rem; }
-  .c-logged-out-follow-up__log-out-button-container {
+
+.c-logged-out-follow-up__log-out-button-container {
     text-align: center; }
 
 .c-sso {
@@ -180,34 +215,58 @@
   font-family: Gentona, sans-serif;
   font-weight: 400;
   font-size: 10px; }
-  .c-sso::before, .c-sso::after, .c-sso *, .c-sso *::before, .c-sso *::after {
+
+.c-sso::before, .c-sso::after, .c-sso *, .c-sso *::before, .c-sso *::after {
     box-sizing: inherit; }
-  .c-sso__inside {
+
+.c-sso__inside {
     font-size: 1.6rem; }
 
+.c-triangle-divider {
+  background-color: #222;
+  background-color: var(--color-black); }
+
 .c-triangle-divider__triangle {
-  fill: var(--color-black);
-  height: 3rem;
-  width: 100%; }
+    fill: #d5d5d5;
+    fill: var(--color-grey-lighter);
+    height: 10rem;
+    -webkit-transform: scaleY(1.01);
+            transform: scaleY(1.01);
+    -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
+    width: 100%; }
 
 .c-wp-login-jump {
   align-items: center;
   text-align: center; }
-  .c-wp-login-jump--between-logged-out-and-aad {
+
+.c-wp-login-jump--between-logged-out-and-aad {
+    background-color: #d5d5d5;
     background-color: var(--color-grey-lighter);
+    color: #222;
     color: var(--color-black); }
-  .c-wp-login-jump--between-aad-and-wp-login {
+
+.c-wp-login-jump--between-aad-and-wp-login {
+    background-color: #222;
     background-color: var(--color-black);
+    color: #fff;
     color: var(--color-white); }
-  .c-wp-login-jump__content {
+
+.c-wp-login-jump__content {
     display: inline-grid;
     justify-content: center;
     justify-items: center;
-    padding: 1rem;
     line-height: 1.2;
     z-index: 3; }
-  .c-wp-login-jump__button {
+
+@media (min-width: 750px) {
+      .c-wp-login-jump__content {
+        -webkit-transform: translateY(50%);
+                transform: translateY(50%); } }
+
+.c-wp-login-jump__button {
     align-items: center;
+    background-color: #f76800;
     background-color: var(--color-orange);
     border: 0;
     border-radius: 50%;
@@ -219,9 +278,18 @@
     margin-bottom: 1rem;
     top: 0;
     width: 5rem; }
-  .c-wp-login-jump__text-content {
+
+@media (min-width: 750px) {
+      .c-wp-login-jump__button {
+        order: 1; } }
+
+.c-wp-login-jump__text-content {
     margin: 0 auto;
     padding: 3rem;
     text-align: center;
     width: 60rem; }
+
+@media (min-width: 750px) {
+      .c-wp-login-jump__text-content {
+        order: 2; } }
 

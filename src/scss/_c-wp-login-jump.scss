@@ -16,9 +16,12 @@
     display: inline-grid;
     justify-content: center;
     justify-items: center;
-    padding: 1rem;
     line-height: 1.2;
     z-index: 3;
+
+    @include for-larger-screens {
+      transform: translateY(50%);
+    }
   }
 
   @include e('button') {
@@ -34,6 +37,10 @@
     margin-bottom: 1rem;
     top: 0;
     width: 5rem;
+
+    @include for-larger-screens {
+      order: 1;
+    }
   }
 
   @include e('text-content') {
@@ -41,6 +48,10 @@
     padding: 3rem;
     text-align: center;
     width: 60rem;
+
+    @include for-larger-screens {
+      order: 2;
+    }
   }
 }
 

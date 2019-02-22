@@ -6,8 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const buildDirPath = path.join(__dirname, '/build');
 
 module.exports = {
-  devtool: 'eval-cheap-module-source-map',
-
   entry: {
     plugin: './src/js/index.js'
   },
@@ -52,9 +50,5 @@ module.exports = {
         ]
       }
     ]
-  },
-
-  watchOptions: {
-    ignored: ['node_modules', 'build']
   }
 };
