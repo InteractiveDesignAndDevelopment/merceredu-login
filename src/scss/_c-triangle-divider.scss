@@ -2,7 +2,7 @@
   background-color: var(--color-black);
 
   @include e('triangle') {
-    fill: var(--color-grey-lighter);
+    fill: var(--color-grey-80);
     height: 10rem;
     transform: scaleY(1.01);
     transform-origin: center bottom;

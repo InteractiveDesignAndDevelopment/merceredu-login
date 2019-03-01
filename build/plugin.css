@@ -1,19 +1,135 @@
 :root {
   --color-white: #fff;
   --color-black: #222;
-  --color-orange: #f76800;
-  --color-blue: #2197d0;
-  --color-red: #f9314a;
-  --color-purple: #8850f8;
-  --color-green: #6db644;
-  --color-grey-darker: #2f2f2f;
-  --color-grey-dark: #3f3f41;
-  --color-grey: #676767;
-  --color-grey-light: #999;
-  --color-grey-lighter: #d5d5d5;
-  --color-grey-lightest: #f5f5f5;
-  --color-red-x-222222-nt-aa: #F94358;
-  --color-green-x-ffffff-nt-aa: #4E8230; }
+  /* Grey color scale */
+  --color-grey-900: #0b0b0b;
+  /* 900 */
+  --color-grey-850: #161616;
+  /* 850 */
+  --color-grey-800: #2f2f2f;
+  /* 800 */
+  --color-grey-700: #3f3f41;
+  /* 700 */
+  --color-grey-600: #676767;
+  /* 600 */
+  --color-grey-400: #848484;
+  /* 400 */
+  --color-grey-300: #999999;
+  /* 300 */
+  --color-grey-100: #b9b9b9;
+  /* 100 */
+  --color-grey-80: #d5d5d5;
+  /* 80 */
+  --color-grey-20: #f5f5f5;
+  /* 20 */
+  /*  Made with Geenes | geenes.app  */
+  --color-red-900: #1b0508;
+  /* 900 */
+  --color-red-850: #370a10;
+  /* 850 */
+  --color-red-800: #771723;
+  /* 800 */
+  --color-red-750: #c12639;
+  /* 750 */
+  --color-red-600: #F9314A;
+  /* 600 */
+  --color-red-500: #fa596d;
+  /* 500 */
+  --color-red-300: #fb7f8e;
+  /* 300 */
+  --color-red-200: #fca1ac;
+  /* 200 */
+  --color-red-80: #fdc6cd;
+  /* 80 */
+  --color-red-20: #feecee;
+  /* 20 */
+  /*  Made with Geenes | geenes.app  */
+  /* Orange color scale */
+  --color-orange-900: #1b0b00;
+  /* 900 */
+  --color-orange-850: #361600;
+  /* 850 */
+  --color-orange-750: #763100;
+  /* 750 */
+  --color-orange-600: #c04f00;
+  /* 600 */
+  --color-orange-500: #F76800;
+  /* 500 */
+  --color-orange-300: #f88432;
+  /* 300 */
+  --color-orange-200: #faa060;
+  /* 200 */
+  --color-orange-100: #fbb98b;
+  /* 100 */
+  --color-orange-50: #fcd5b9;
+  /* 50 */
+  --color-orange-20: #fef1e7;
+  /* 20 */
+  /*  Made with Geenes | geenes.app  */
+  /* Red color scale */
+  --color-green-900: #0c1407;
+  /* 900 */
+  --color-green-850: #18280f;
+  /* 850 */
+  --color-green-700: #345720;
+  /* 700 */
+  --color-green-500: #548d34;
+  /* 500 */
+  --color-green-300: #6DB644;
+  /* 300 */
+  --color-green-200: #89c468;
+  /* 200 */
+  --color-green-100: #a4d18a;
+  /* 100 */
+  --color-green-80: #bcddaa;
+  /* 80 */
+  --color-green-50: #d7ebcc;
+  /* 50 */
+  --color-green-20: #f1f8ee;
+  /* 20 */
+  /*  Made with Geenes | geenes.app  */
+  --color-blue-900: #031017;
+  /* 900 */
+  --color-blue-850: #07212e;
+  /* 850 */
+  --color-blue-750: #0f4764;
+  /* 750 */
+  --color-blue-600: #1874a1;
+  /* 600 */
+  --color-blue-400: #2197D0;
+  /* 400 */
+  --color-blue-300: #4baad9;
+  /* 300 */
+  --color-blue-200: #74bde1;
+  /* 200 */
+  --color-blue-100: #99cee9;
+  /* 100 */
+  --color-blue-50: #c2e2f2;
+  /* 50 */
+  --color-blue-20: #eaf5fa;
+  /* 20 */
+  /*  Made with Geenes | geenes.app  */
+  --color-purple-900: #0f081b;
+  /* 900 */
+  --color-purple-850: #1e1136;
+  /* 850 */
+  --color-purple-800: #412676;
+  /* 800 */
+  --color-purple-700: #693dc0;
+  /* 700 */
+  --color-purple-600: #8850F8;
+  /* 600 */
+  --color-purple-400: #9e71f8;
+  /* 400 */
+  --color-purple-300: #b491fa;
+  /* 300 */
+  --color-purple-100: #c8affb;
+  /* 100 */
+  --color-purple-80: #decffc;
+  /* 80 */
+  --color-purple-20: #f4effe;
+  /* 20 */
+  /*  Made with Geenes | geenes.app  */ }
 
 @font-face {
   font-display: fallback;
@@ -104,20 +220,20 @@
 
 .c-aad-login__content {
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     grid-auto-flow: row;
     line-height: 1.2;
     margin: 0 auto;
-    max-width: 60rem;
-    padding: 1rem; }
+    max-width: var(--content-max-width);
+    padding: 2rem var(--content-gutter); }
 
 @media (min-width: 750px) {
       .c-aad-login__content {
+        padding: 5rem 0 0;
         grid-template: "heading            heading" "log-in-description log-out-description" "log-in-button      log-out-button"; } }
 
 .c-aad-login__heading {
-    font-weight: normal;
-    font-size: 2rem; }
+    font-weight: normal; }
 
 @media (min-width: 750px) {
       .c-aad-login__heading {
@@ -129,40 +245,68 @@
     .c-aad-login__description--log-out {
       grid-area: log-out-description; } }
 
+@media (min-width: 750px) {
+    .c-aad-login__button-wrapper--log-in {
+      grid-area: log-in-button; }
+    .c-aad-login__button-wrapper--log-out {
+      grid-area: log-out-button; } }
+
 .c-button {
-  border: 0;
-  display: inline-grid;
-  font-size: 1.8rem;
-  padding: 1rem;
+  all: unset;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
   text-decoration: none; }
 
-.c-button--log-in {
-    background-color: #4E8230;
-    background-color: var(--color-green-x-ffffff-nt-aa); }
-
 .c-button--log-in:active, .c-button--log-in:focus, .c-button--log-in:hover, .c-button--log-in:link, .c-button--log-in:visited {
-      color: #fff;
-      color: var(--color-white); }
+    color: #fff;
+    color: var(--color-white); }
 
-@media (min-width: 750px) {
-      .c-button--log-in {
-        grid-area: log-in-button; } }
+.c-button--log-in .c-button__icon {
+    background-color: #345720;
+    background-color: var(--color-green-700); }
 
-.c-button--log-out {
-    background-color: #F94358;
-    background-color: var(--color-red-x-222222-nt-aa); }
+.c-button--log-in .c-button__icon svg g {
+      stroke: #fff; }
+
+.c-button--log-in .c-button__text {
+    background-color: #548d34;
+    background-color: var(--color-green-500); }
 
 .c-button--log-out:active, .c-button--log-out:focus, .c-button--log-out:hover, .c-button--log-out:link, .c-button--log-out:visited {
-      color: #222;
-      color: var(--color-black); }
+    color: #fff;
+    color: var(--color-white); }
 
-@media (min-width: 750px) {
-      .c-button--log-out {
-        grid-area: log-out-button; } }
+.c-button--log-out .c-button__icon {
+    background-color: #771723;
+    background-color: var(--color-red-800); }
+
+.c-button--log-out .c-button__icon svg g {
+      stroke: #fff; }
+
+.c-button--log-out .c-button__text {
+    background-color: #c12639;
+    background-color: var(--color-red-750); }
+
+.c-button__icon {
+    align-content: center;
+    display: grid;
+    justify-content: center;
+    padding: 0.5rem; }
+
+.c-button__icon svg {
+      max-width: 100%; }
+
+.c-button__text {
+    align-content: center;
+    display: grid;
+    font-size: 1.8rem;
+    justify-content: start;
+    line-height: 1.2;
+    padding: 1rem; }
 
 .c-chevron-divider {
-  background-color: #f76800;
-  background-color: var(--color-orange);
+  background-color: #F76800;
+  background-color: var(--color-orange-500);
   height: 20rem;
   position: relative; }
 
@@ -190,31 +334,48 @@
 
 .c-logged-out-follow-up {
   background-color: #d5d5d5;
-  background-color: var(--color-grey-lighter); }
+  background-color: var(--color-grey-80); }
 
 .c-logged-out-follow-up__content {
-    max-width: 750px;
+    display: grid;
+    grid-gap: 2rem;
     margin: 0 auto;
-    padding: 1rem 1rem 0; }
+    max-width: var(--content-max-width);
+    padding: 2rem var(--content-gutter) 0; }
+
+@media (min-width: 750px) {
+      .c-logged-out-follow-up__content {
+        font-size: 2rem;
+        grid-gap: 2rem;
+        padding: 5rem var(--content-gutter) 0; } }
 
 .c-logged-out-follow-up__heading {
-    line-height: 1.2;
-    margin-bottom: 1rem; }
+    font-weight: normal;
+    line-height: 1.2; }
 
-.c-logged-out-follow-up__message {
-    margin-bottom: 1rem; }
-
-.c-logged-out-follow-up__invitation {
-    margin-bottom: 1rem; }
+.c-logged-out-follow-up__heading strong {
+      background-color: #c12639;
+      background-color: var(--color-red-750);
+      border: 4px solid #c12639;
+      border: 4px solid var(--color-red-750);
+      box-shadow: inset 0 0 0 2px #fff;
+      box-shadow: inset 0 0 0 2px var(--color-white);
+      color: #fff;
+      color: var(--color-white);
+      display: inline-block;
+      padding: 2px 0.5rem; }
 
 .c-logged-out-follow-up__log-out-button-container {
-    text-align: center; }
+    display: grid;
+    justify-content: center; }
 
 .c-sso {
   box-sizing: border-box;
   font-family: Gentona, sans-serif;
   font-weight: 400;
-  font-size: 10px; }
+  font-size: 10px;
+  --content-max-width: 60rem;
+  --content-gutter: 1rem; }
 
 .c-sso::before, .c-sso::after, .c-sso *, .c-sso *::before, .c-sso *::after {
     box-sizing: inherit; }
@@ -228,7 +389,7 @@
 
 .c-triangle-divider__triangle {
     fill: #d5d5d5;
-    fill: var(--color-grey-lighter);
+    fill: var(--color-grey-80);
     height: 10rem;
     -webkit-transform: scaleY(1.01);
             transform: scaleY(1.01);
@@ -237,14 +398,17 @@
     width: 100%; }
 
 .c-wp-login-jump {
-  align-items: center;
   text-align: center; }
 
 .c-wp-login-jump--between-logged-out-and-aad {
     background-color: #d5d5d5;
-    background-color: var(--color-grey-lighter);
+    background-color: var(--color-grey-80);
     color: #222;
     color: var(--color-black); }
+
+.c-wp-login-jump--between-logged-out-and-aad .c-wp-login-jump__button {
+      background-color: #222;
+      background-color: var(--color-black); }
 
 .c-wp-login-jump--between-aad-and-wp-login {
     background-color: #222;
@@ -252,11 +416,18 @@
     color: #fff;
     color: var(--color-white); }
 
+.c-wp-login-jump--between-aad-and-wp-login .c-wp-login-jump__button {
+      background-color: #F76800;
+      background-color: var(--color-orange-500); }
+
 .c-wp-login-jump__content {
     display: inline-grid;
+    grid-gap: 1rem;
     justify-content: center;
     justify-items: center;
     line-height: 1.2;
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
     z-index: 3; }
 
 @media (min-width: 750px) {
@@ -266,8 +437,6 @@
 
 .c-wp-login-jump__button {
     align-items: center;
-    background-color: #f76800;
-    background-color: var(--color-orange);
     border: 0;
     border-radius: 50%;
     cursor: pointer;
@@ -275,7 +444,6 @@
     height: 5rem;
     justify-items: center;
     left: 50%;
-    margin-bottom: 1rem;
     top: 0;
     width: 5rem; }
 
@@ -283,13 +451,11 @@
       .c-wp-login-jump__button {
         order: 1; } }
 
-.c-wp-login-jump__text-content {
+.c-wp-login-jump__text {
     margin: 0 auto;
-    padding: 3rem;
-    text-align: center;
-    width: 60rem; }
+    text-align: center; }
 
 @media (min-width: 750px) {
-      .c-wp-login-jump__text-content {
+      .c-wp-login-jump__text {
         order: 2; } }
 

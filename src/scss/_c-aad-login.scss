@@ -10,14 +10,15 @@
 
   @include e('content') {
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     grid-auto-flow: row;
     line-height: 1.2;
     margin: 0 auto;
-    max-width: 60rem;
-    padding: 1rem;
+    max-width: var(--content-max-width);
+    padding: 2rem var(--content-gutter);
 
     @include for-larger-screens {
+      padding: 5rem 0 0;
       grid-template:
         "heading            heading"
         "log-in-description log-out-description"
@@ -27,7 +28,6 @@
 
   @include e('heading') {
     font-weight: normal;
-    font-size: 2rem;
 
     @include for-larger-screens {
       grid-area: heading;
@@ -41,6 +41,17 @@
       }
       @include m('log-out') {
         grid-area: log-out-description;
+      }
+    }
+  }
+
+  @include e('button-wrapper') {
+    @include for-larger-screens {
+      @include m('log-in') {
+        grid-area: log-in-button;
+      }
+      @include m('log-out') {
+        grid-area: log-out-button;
       }
     }
   }

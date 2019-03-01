@@ -1,12 +1,11 @@
 @include c('button') {
-  border: 0;
-  display: inline-grid;
-  font-size: 1.8rem;
-  padding: 1rem;
+  all: unset;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  // justify-content: start;
   text-decoration: none;
 
   @include m('log-in') {
-    background-color: var(--color-green-x-ffffff-nt-aa);
 
     &:active,
     &:focus,
@@ -16,24 +15,73 @@
       color: var(--color-white);
     }
 
-    @include for-larger-screens {
-      grid-area: log-in-button;
+    @include e('icon') {
+      background-color: var(--color-green-700);
+
+      svg {
+        g {
+          stroke: #fff;
+        }
+      }
     }
+
+    @include e('text') {
+      background-color: var(--color-green-500);
+    }
+
+    // @include for-larger-screens {
+    //   grid-area: log-in-button;
+    // }
   }
 
   @include m('log-out') {
-    background-color: var(--color-red-x-222222-nt-aa);
 
     &:active,
     &:focus,
     &:hover,
     &:link,
     &:visited {
-      color: var(--color-black);
+      color: var(--color-white);
     }
 
-    @include for-larger-screens {
-      grid-area: log-out-button;
+    @include e('icon') {
+      background-color: var(--color-red-800);
+
+      svg {
+        g {
+          stroke: #fff;
+        }
+      }
+    }
+
+    @include e('text') {
+      background-color: var(--color-red-750);
+    }
+
+    // @include for-larger-screens {
+    //   grid-area: log-out-button;
+    // }
+  }
+
+  // An optional element
+  @include e('icon') {
+    align-content: center;
+    display: grid;
+    justify-content: center;
+    padding: 0.5rem;
+
+    svg {
+      max-width: 100%;
     }
   }
+
+  @include e('text') {
+    align-content: center;
+    display: grid;
+    font-size: 1.8rem;
+    justify-content: start;
+    line-height: 1.2;
+    padding: 1rem;
+  }
+
 }
